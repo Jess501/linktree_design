@@ -1,0 +1,193 @@
+/* 
+ * STYLES GÉNÉRAUX DE LA PAGE
+ * Configuration de base pour le corps de la page
+ * Utilise flexbox pour centrer le contenu verticalement et horizontalement
+ */
+ body {
+  margin: 0;                /* Supprime les marges par défaut */
+  padding: 0;               /* Supprime les rembourrages par défaut */
+  display: flex;            /* Active la mise en page flexbox */
+  justify-content: center;  /* Centre horizontalement le contenu */
+  align-items: center;      /* Centre verticalement le contenu */
+  height: 100vh;            /* Prend 100% de la hauteur de la fenêtre */
+  background-color: rgb(149, 149, 190); /* Couleur de fond violette-grise */
+  font-family: Arial, sans-serif; /* Police par défaut pour tout le site */
+}
+
+/*
+* CONTENEUR PRINCIPAL - MAQUETTE TÉLÉPHONE
+* Simule l'apparence d'un téléphone mobile
+* Dimensions standard pour un affichage mobile
+*/
+.phone_border {
+  width: 360px;             /* Largeur standard pour un affichage mobile */
+  height: 640px;            /* Hauteur standard pour un affichage mobile */
+  border: 10px solid #000;  /* Bordure noire épaisse pour simuler le cadre du téléphone */
+  border-radius: 40px;      /* Coins arrondis pour ressembler à un smartphone */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Ombre portée pour l'effet 3D */
+  overflow: hidden;         /* Masque tout contenu qui dépasse des limites */
+  display: flex;            /* Utilise flexbox pour l'organisation interne */
+  flex-direction: column;   /* Empile les éléments verticalement */
+  background-color: aquamarine; /* Couleur de fond de l'écran du téléphone */
+}
+
+/*
+* BARRE DE NAVIGATION
+* En-tête de l'application mobile
+* Contient les liens principaux de navigation
+*/
+nav {
+  background-color: #333;   /* Fond gris foncé pour la barre de navigation */
+  color: white;             /* Texte blanc pour un bon contraste */
+  text-align: center;       /* Centre le texte horizontalement */
+  padding: 15px 0;          /* Espace interne (haut/bas uniquement) */
+  font-size: 1.2rem;        /* Taille de police légèrement agrandie */
+  display: flex;            /* Utilise flexbox pour organiser les liens */
+  justify-content: space-around; /* Répartit les liens équitablement */
+}
+
+/*
+* LIENS DE NAVIGATION
+* Style des liens dans la barre de navigation
+*/
+nav a {
+  color: white;             /* Couleur blanche pour les liens */
+  text-decoration: none;    /* Supprime le soulignement par défaut des liens */
+  font-weight: bold;        /* Rend le texte en gras pour plus de lisibilité */
+}
+
+/*
+* CONTENU PRINCIPAL
+* Zone principale de l'application
+* Utilise flexbox pour organiser le contenu verticalement
+*/
+main {
+  flex: 1;                  /* Prend tout l'espace disponible restant */
+  display: flex;            /* Active flexbox */
+  flex-direction: column;   /* Organise les éléments verticalement */
+  justify-content: flex-start; /* Aligne les éléments au début */
+  align-items: center;      /* Centre les éléments horizontalement */
+  padding: 20px;            /* Espace interne autour du contenu */
+}
+
+/*
+* TITRE PRINCIPAL
+* Style du titre h1 dans le contenu principal
+*/
+h1 {
+  margin: 0;                /* Réinitialise les marges par défaut */
+  font-size: 1.5rem;        /* Taille de police adaptée pour mobile */
+  text-align: center;       /* Centre le texte */
+  margin-bottom: 20px;      /* Ajoute de l'espace sous le titre */
+}
+
+/*
+* BARRE D'ONGLETS
+* Conteneur pour les onglets de navigation en bas de l'écran
+*/
+.tabs {
+  display: flex;            /* Utilise flexbox */
+  justify-content: center;  /* Centre les onglets horizontalement */
+  gap: 20px;                /* Espace entre les onglets */
+  margin-top: auto;         /* Pousse les onglets vers le bas */
+  margin-bottom: 20px;      /* Espace au-dessus du pied de page */
+}
+
+/*
+* IMAGES DES ONGLETS
+* Style pour les icônes des onglets
+*/
+.tab img {
+  width: 40px;              /* Largeur fixe pour les icônes */
+  height: 40px;             /* Hauteur fixe pour les icônes */
+  border-radius: 50%;       /* Forme circulaire */
+  transition: transform 0.3s, opacity 0.3s; /* Animation fluide au survol */
+}
+
+/*
+* EFFET AU SURVOL DES ONGLETS
+* Animation interactive lorsque l'utilisateur survole une icône
+*/
+.tab img:hover {
+  transform: scale(1.2);    /* Agrandit l'icône de 20% */
+  opacity: 0.8;             /* Réduit légèrement l'opacité */
+}
+
+/*
+* CLASSE D'ANIMATION
+* Pour les éléments qui doivent apparaître avec une animation
+*/
+.animated {
+  animation: fadeIn 2s ease-in-out; /* Applique l'animation 'fadeIn' */
+}
+
+/*
+* ANIMATION D'APPARITION
+* Définition de l'animation fadeIn utilisée par la classe .animated
+*/
+@keyframes fadeIn {
+  0% {                      /* État initial de l'animation */
+      opacity: 0;           /* Invisible au départ */
+      transform: translateY(-20px); /* Décalé vers le haut */
+  }
+  100% {                    /* État final de l'animation */
+      opacity: 1;           /* Complètement visible */
+      transform: translateY(0); /* Position normale */
+  }
+}
+
+/*
+* PIED DE PAGE
+* Barre inférieure de l'application
+*/
+footer {
+  background-color: #333;   /* Fond gris foncé, comme la navigation */
+  color: white;             /* Texte blanc pour un bon contraste */
+  text-align: center;       /* Centre le texte */
+  padding: 10px 0;          /* Espace interne (haut/bas uniquement) */
+  font-size: 0.9rem;        /* Police légèrement plus petite */
+}
+
+/*
+* SECTION PROFIL
+* Style pour la section de profil utilisateur
+*/
+.profil {
+  text-align: center;       /* Centre le contenu du profil */
+}
+
+/*
+* LIENS PROFESSIONNELS - CONTENEURS
+* Style des blocs contenant les liens professionnels
+*/
+.my_professional_link div {
+  border: 1px solid black;  /* Bordure fine noire */
+  margin: 10px;             /* Marge externe autour de chaque lien */
+  padding: 6px;             /* Espace interne dans chaque lien */
+  background-color: orange; /* Fond orange pour les liens */
+}
+
+/*
+* LIENS PROFESSIONNELS - TEXTE
+* Style du texte des liens
+*/
+.my_professional_link a {
+  text-decoration: none;    /* Supprime le soulignement par défaut */
+  color: red;               /* Couleur rouge pour le texte des liens */
+}
+
+/*
+* EFFET AU SURVOL DES LIENS PROFESSIONNELS
+* Changement de couleur de fond au survol
+*/
+.my_professional_link div:hover {
+  background-color: white;  /* Fond blanc au survol */
+}
+
+/*
+* TITRES SECONDAIRES
+* Style pour les titres h2
+*/
+h2 {
+  text-align: center;       /* Centre le texte des titres h2 */
+}
